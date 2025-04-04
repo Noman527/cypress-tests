@@ -1,0 +1,32 @@
+name: Cypress Tests
+
+on:
+  push:
+    branches:
+      - main  # Runs tests when code is pushed to 'main' branch
+  pull_request:
+    branches:
+      - main  # Runs tests on pull requests
+
+jobs:
+  cypress-run:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Install Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run Cypress tests
+        uses: cypress-io/github-action@v6
+        with:
+          build: npm run build
+          start: npm start
+          wait-on: 'http://localhost:3000' # Change this if your app runs on a different port
