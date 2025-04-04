@@ -1,5 +1,6 @@
 module.exports = {
   e2e: {
-    baseUrl: "https://example.cypress.io", // Use this instead of Google
+    baseUrl: "http://localhost:3000", // Use local server instead
   },
 };
+
