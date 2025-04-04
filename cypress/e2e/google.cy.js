@@ -1,6 +1,7 @@
-describe("Google Search", () => {
-    it("should load Google homepage", () => {
-      cy.visit("https://www.google.com");
-    });
+describe("Example Cypress", () => {
+  it("should load the example page", () => {
+    cy.visit("/"); // Uses baseUrl from config
   });
+});
+
   
